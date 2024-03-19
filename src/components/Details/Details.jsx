@@ -7,8 +7,8 @@ const Details = () => {
         <div className="flex items-center justify-center">
             <div className="w-[80vw] h-fit space-y-4 text-center">
                 <h1 className="text-3xl font-bold">Name : {country.name.common}</h1>
-                <h2  className="text-2xl font-semibold text-gray-800">Official Name : {country.name.official}</h2>
-                <h2  className="text-2xl font-semibold text-gray-800">Capital : {country.capital}</h2>
+                <h2 className="text-2xl font-semibold text-gray-800">Official Name : {country.name.official}</h2>
+                <h2 className="text-2xl font-semibold text-gray-800">Capital : {country.capital}</h2>
                 {
                     country.independent ? <p className="text-blue-800 font-bold">Independent</p> : <p className="text-red-400 font-bold">Not Independent</p>
                 }
@@ -22,11 +22,12 @@ const Details = () => {
                         <img className="w-[30%] mx-auto" src={country.coatOfArms.png} alt="" />
                     </div>
                 </div>
-                <h2 className="text-2xl font-bold">
+                {country.borders?.length > 0 && <h2 className="text-2xl font-bold">
                     Borders with country : {
                         country.borders.map((border, idx) => <p className="text-gray-500 font-medium text-xl" key={idx}>{idx + 1}:{border}</p>)
                     }
                 </h2>
+                }
                 <h2 className="text-2xl font-bold">Area : {country.area} KM <sup>2</sup></h2>
                 <h2 className="text-2xl font-bold">Population : {country.population}</h2>
                 <h1 className="text-2xl font-bold">Region : {country.region}</h1>
