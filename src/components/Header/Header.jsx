@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
+import './header.css';
 
 const Header = () => {
     return (
-        <div className="bg-black">
-            <div className="flex w-4/5 mx-auto items-center m-2 justify-between">
+        <div className="bg-black mx-auto flex items-center justify-center">
+            <div className="flex w-4/5 mx-auto bg-black fixed top-0 items-center m-2 justify-between">
                 <ul className="text-white flex-1 flex">
                     <NavLink className={'hover:bg-gray-700 p-4 text-center w-[8vw] duration-300 border-b-2 border-transparent hover:border-b-red-400'} to={'/'}>Home</NavLink>
                     <NavLink className={'hover:bg-gray-700 p-4 text-center w-[8vw] duration-300 border-b-2 border-transparent hover:border-b-red-400'} to={'/countries'}>Countries</NavLink>

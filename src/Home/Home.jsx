@@ -5,7 +5,11 @@ const Home = () => {
     return (
         <div>
             <Header></Header>
-            <Outlet></Outlet>
+            <div className="my-16">
+                <Outlet>
+
+                </Outlet>
+            </div>
         </div>
     );
 };
