@@ -10,6 +10,8 @@ import {
 import Home from './Home/Home.jsx';
 import Country from './components/Country/Country.jsx';
 import Details from './components/Details/Details.jsx';
+import StaitcHome from './components/StaticHome/StaitcHome.jsx';
+import Photos from './components/Photos/Photos.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,10 @@ const router = createBrowserRouter([
     element: <Home></Home>,
 
     children: [
+      {
+        path: "/",
+        element: <StaitcHome></StaitcHome>
+      },
       {
         path: "/contact",
         element: <div>contact</div>,
@@ -35,12 +41,13 @@ const router = createBrowserRouter([
         element: <div>Form blog</div>,
       },
       {
-        path: "/posts",
-        element: <div>posts</div>,
+        path: "/photos",
+        loader: () => fetch('https://www.themealdb.com/api/json/v1/1/random.php'),
+        element: <Photos></Photos>,
       },
       {
         path: "/country/:capital",
-        loader: ({params})=> fetch(`https://restcountries.com/v3.1/capital/${params.capital}`),
+        loader: ({ params }) => fetch(`https://restcountries.com/v3.1/capital/${params.capital}`),
         element: <Details></Details>,
       },
     ],

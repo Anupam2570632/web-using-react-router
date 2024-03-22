@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div>
             <Header></Header>
-            <div className="my-16">
+            <div className="my-20">
                 <Outlet>
 
                 </Outlet>
